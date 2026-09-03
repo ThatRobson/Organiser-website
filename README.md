@@ -92,11 +92,17 @@ The architecture uses MVVM with a service layer for side effects such as calenda
 
 ## Website
 
-This repository contains the public Organiser website hosted with GitHub Pages.
+This repository contains the public Organiser website hosted with GitHub Pages at [organiserapp.co.uk](https://organiserapp.co.uk) (see `CNAME`).
 
 - `index.html` — main landing page
 - `privacy-policy.html` — privacy policy
+- `privacy/` — legacy `/privacy` URL, redirects to `privacy-policy.html`
+- `404.html` — custom not-found page
 - `style.css` — shared site styling
+- `favicon.svg`, `favicon.ico`, `assets/` — favicon, app icons and social share images
+- `site.webmanifest` — web app manifest referencing the icons
+- `robots.txt`, `sitemap.xml` — search engine crawling and indexing
+- `llms.txt` — plain-language site summary for LLM crawlers
 
 ## Privacy
 
