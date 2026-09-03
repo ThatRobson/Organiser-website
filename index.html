@@ -3,12 +3,71 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Organiser — your life, organised. Keep important dates, commitments and everyday money planning in one place.">
+  <meta name="description" content="Organiser brings your important dates, everyday commitments and regular spending together in one calm app for iPhone and iPad. Currently in UK beta.">
   <meta name="theme-color" content="#f5f5f7">
+  <link rel="canonical" href="https://organiserapp.co.uk/">
   <title>Organiser — Your life, organised.</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Organiser">
+  <meta property="og:url" content="https://organiserapp.co.uk/">
+  <meta property="og:title" content="Organiser — Your life, organised.">
+  <meta property="og:description" content="Organiser brings your important dates, everyday commitments and regular spending together in one calm app for iPhone and iPad. Currently in UK beta.">
+  <meta property="og:image" content="https://organiserapp.co.uk/assets/og-home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Organiser — Your life, organised. Know what's next, know what matters.">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Organiser — Your life, organised.">
+  <meta name="twitter:description" content="Important dates, everyday commitments and regular spending together in one calm iPhone & iPad app.">
+  <meta name="twitter:image" content="https://organiserapp.co.uk/assets/og-home.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://organiserapp.co.uk/#organization",
+        "name": "Organiser",
+        "url": "https://organiserapp.co.uk/",
+        "logo": "https://organiserapp.co.uk/assets/icon-512.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://organiserapp.co.uk/#website",
+        "url": "https://organiserapp.co.uk/",
+        "name": "Organiser",
+        "publisher": { "@id": "https://organiserapp.co.uk/#organization" }
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Organiser",
+        "operatingSystem": "iOS, iPadOS",
+        "applicationCategory": "LifestyleApplication",
+        "description": "Organiser brings your important dates, everyday commitments and regular spending together in one calm app for iPhone and iPad.",
+        "url": "https://organiserapp.co.uk/",
+        "author": { "@id": "https://organiserapp.co.uk/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/PreOrder",
+          "price": "0",
+          "priceCurrency": "GBP"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to content</a>
   <header class="site-header">
     <nav class="nav container" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Organiser home">
@@ -34,7 +93,7 @@
         <p class="availability">iPhone &amp; iPad · UK beta</p>
       </div>
 
-      <div class="phone-wrap" aria-label="Organiser app preview">
+      <div class="phone-wrap" aria-hidden="true">
         <div class="phone">
           <div class="phone-notch"></div>
           <div class="phone-screen">
@@ -113,7 +172,7 @@
 
   <footer class="footer container">
     <span>© 2026 Organiser</span>
-    <span><a href="/privacy">Privacy Policy</a> · Made for people who make plans.</span>
+    <span><a href="/privacy-policy.html">Privacy Policy</a> · Made for people who make plans.</span>
   </footer>
 </body>
 </html>

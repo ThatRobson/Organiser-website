@@ -1,0 +1,15 @@
+# Organiser
+
+> Organiser is an iOS and iPadOS personal life-management app, currently in UK beta, that brings important dates, everyday commitments and regular spending together in one place.
+
+Organiser is built around three simple questions: what's happening (Home), what's coming up (Organiser), and what you can afford (Budget). It tracks things like birthdays, bills, MOT and vehicle tax renewals, insurance, appointments and other recurring life admin, with configurable reminders, and gives financial context by connecting recurring commitments to income and everyday spending. The app takes a local-first approach to personal data and is built with SwiftUI, SwiftData, EventKit and UserNotifications.
+
+## Pages
+
+- [Home](https://organiserapp.co.uk/): Product overview, how Organiser works, and core features.
+- [Privacy Policy](https://organiserapp.co.uk/privacy-policy.html): What Organiser stores, where data is kept, and how permissions like Calendar, Contacts and Notifications are used.
+
+## Notes
+
+- Organiser is currently in beta, UK-focused (£ currency, UK bank holidays, MOT/vehicle tax categories), for iPhone and iPad.
+- The app is not yet publicly downloadable; the website reflects pre-launch beta status.

@@ -92,11 +92,84 @@ The architecture uses MVVM with a service layer for side effects such as calenda
 
 ## Website
 
-This repository contains the public Organiser website hosted with GitHub Pages.
+This repository contains the public Organiser website hosted with GitHub Pages at [organiserapp.co.uk](https://organiserapp.co.uk) (see `CNAME`).
 
 - `index.html` — main landing page
 - `privacy-policy.html` — privacy policy
+- `privacy/` — legacy `/privacy` URL, redirects to `privacy-policy.html`
+- `404.html` — custom not-found page
 - `style.css` — shared site styling
+- `favicon.svg`, `favicon.ico`, `assets/` — favicon, app icons and social share images
+- `site.webmanifest` — web app manifest referencing the icons
+- `robots.txt`, `sitemap.xml` — search engine crawling and indexing
+- `llms.txt` — plain-language site summary for LLM crawlers
+
+There's no build step — it's plain HTML/CSS, deployed as-is. That means anything you see in the repo is exactly what goes live.
+
+## Working with this repo (git basics)
+
+If you're new to git, here's the everyday flow for this project.
+
+**1. Clone it (only once, to get it onto your machine)**
+
+```bash
+git clone https://github.com/ThatRobson/Organiser-website.git
+cd Organiser-website
+```
+
+**2. Check what state you're in**
+
+```bash
+git status
+```
+
+This tells you which branch you're on and whether you have uncommitted changes. Run it often — it's always safe.
+
+**3. Create a branch before making changes**
+
+Don't edit directly on `main`. Branch off first:
+
+```bash
+git checkout -b my-change-name
+```
+
+**4. Preview your changes locally**
+
+Since it's static HTML, you can just open `index.html` in a browser, or run a quick local server so relative links/paths behave the same as they will live:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit `http://localhost:8000` in your browser.
+
+**5. Stage and commit your changes**
+
+```bash
+git add .
+git commit -m "Short description of what you changed"
+```
+
+**6. Push your branch to GitHub**
+
+```bash
+git push -u origin my-change-name
+```
+
+**7. Open a pull request**
+
+GitHub will print a link after the push (or visit the repo on GitHub — it'll show a banner offering to open a PR for your branch). A pull request lets you review the diff before it merges into `main`.
+
+**8. Merge**
+
+Once you're happy with it, merge the PR on GitHub. GitHub Pages will redeploy the live site automatically from `main` within a few minutes.
+
+### A few things worth knowing
+
+- `git status` before anything destructive (`git checkout .`, `git reset --hard`, etc.) — it shows you what you'd lose.
+- Commits are local until you `git push` — nothing reaches GitHub (or the live site) until then.
+- If you just want to see a diff of what you've changed but not staged yet: `git diff`.
+- If you made a mess and just want to discard uncommitted edits to a file: `git checkout -- filename`.
 
 ## Privacy
 
