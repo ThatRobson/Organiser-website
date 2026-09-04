@@ -8,6 +8,7 @@ Organiser is built around three simple questions: what's happening (Home), what'
 
 - [Home](https://organiserapp.co.uk/): Product overview, how Organiser works, and core features.
 - [Privacy Policy](https://organiserapp.co.uk/privacy-policy.html): What Organiser stores, where data is kept, and how permissions like Calendar, Contacts and Notifications are used.
+- [Support](https://organiserapp.co.uk/support/): Frequently asked questions, in-app feedback options, and how to follow Organiser on Instagram and Facebook.
 
 ## Notes
 
