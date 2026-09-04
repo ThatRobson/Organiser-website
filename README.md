@@ -97,14 +97,25 @@ This repository contains the public Organiser website hosted with GitHub Pages a
 - `index.html` — main landing page
 - `privacy-policy.html` — privacy policy
 - `privacy/` — legacy `/privacy` URL, redirects to `privacy-policy.html`
+- `support/` — support page (FAQ pointer, in-app feedback, social links)
 - `404.html` — custom not-found page
+- `_includes/header.html`, `_includes/footer.html` — the shared header and footer, pulled into every page (see below)
 - `style.css` — shared site styling
-- `favicon.svg`, `favicon.ico`, `assets/` — favicon, app icons and social share images
+- `favicon.ico`, `assets/` — favicon, app icons and social share images
 - `site.webmanifest` — web app manifest referencing the icons
 - `robots.txt`, `sitemap.xml` — search engine crawling and indexing
 - `llms.txt` — plain-language site summary for LLM crawlers
 
-There's no build step — it's plain HTML/CSS, deployed as-is. That means anything you see in the repo is exactly what goes live.
+It's plain HTML/CSS with no custom build tooling of our own — but GitHub Pages runs every push through **Jekyll** by default (no config needed), which is what turns `{% include header.html %}` into the real header markup at deploy time. That's the one thing to know before previewing locally: see below.
+
+### Updating the header or footer
+
+Every page shares the same header and footer via `{% include header.html %}` and `{% include footer.html %}` — edit `_includes/header.html` or `_includes/footer.html` once and it updates everywhere, instead of hunting down four separate copies. The header include takes two optional parameters used per-page:
+
+- `home=true` — only set on `index.html`, since its nav links point at same-page anchors (`#benefits`) instead of `/#benefits`, and the logo links to `#top` instead of `/`.
+- `skip_target="..."` — the id of that page's `<main>`, so the "Skip to content" link lands in the right place (`top` on the homepage and 404 page, `main` on content pages).
+
+If you add a new page, copy the pattern from an existing one (e.g. `support/index.html`) rather than hand-writing the header/footer again.
 
 ## Working with this repo (git basics)
 
@@ -135,7 +146,14 @@ git checkout -b my-change-name
 
 **4. Preview your changes locally**
 
-Since it's static HTML, you can just open `index.html` in a browser, or run a quick local server so relative links/paths behave the same as they will live:
+Because pages use Jekyll includes for the header/footer (see above), opening `index.html` directly in a browser — or serving the repo as-is with a plain file server — will show the literal `{% include %}` text instead of a real header. You need Jekyll to process that first:
+
+```bash
+gem install jekyll
+jekyll serve
+```
+
+Then visit `http://localhost:4000`. If you only changed page content and not the header/footer/includes, a plain static server also works fine for a quick look:
 
 ```bash
 python3 -m http.server 8000
