@@ -315,6 +315,8 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; margi
   color: var(--muted); font-size: 13px;
 }
 .footer a:hover { color: var(--text); }
+.footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); }
+.footer-links a { font-weight: 600; }
 
 /* ============================================================
    Breadcrumbs
