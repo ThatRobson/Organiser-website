@@ -1,15 +1,54 @@
-<a class="skip-link" href="#{{ include.skip_target | default: 'main' }}">Skip to content</a>
-<header class="site-header">
-  <nav class="nav container" aria-label="Primary navigation">
-    <a class="brand" href="{% if include.home %}#top{% else %}/{% endif %}" aria-label="Organiser home">
-      <img class="brand-mark" src="/assets/icon-192.png" alt="" width="34" height="34">
-      <span>Organiser</span>
+<header class="site-header" role="banner">
+  <a class="skip-link" href="#{{ include.skip_target | default: 'main' }}">Skip to content</a>
+
+  <div class="container nav" role="navigation" aria-label="Main navigation">
+    <a href="{% if include.home %}#top{% else %}/{% endif %}" class="brand" aria-label="Organiser home">
+      <img src="/assets/icon-192.png" alt="" class="brand-mark" width="34" height="34">
+      <span class="brand-text">Organiser</span>
     </a>
-    <div class="nav-links">
+
+    <nav class="nav-links" aria-label="Primary">
       <a class="nav-link" href="{% unless include.home %}/{% endunless %}#benefits">Benefits</a>
       <a class="nav-link" href="{% unless include.home %}/{% endunless %}#proof">Why trust it</a>
       <a class="nav-link" href="{% unless include.home %}/{% endunless %}#faq">FAQ</a>
-      <a class="nav-link" href="/support/">Support</a>
+    </nav>
+
+    <div class="nav-actions" style="margin-left:auto; display:flex; align-items:center; gap:12px;">
+      <a class="nav-cta" href="/support/">Support</a>
+
+      <button
+        id="mobileMenuToggle"
+        class="mobile-toggle"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
-  </nav>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu" hidden>
+    <div class="container">
+      <div class="mobile-menu-inner" style="display:flex; flex-direction:column; gap:12px; padding:16px 0;">
+        <a class="nav-link" href="{% unless include.home %}/{% endunless %}#benefits">Benefits</a>
+        <a class="nav-link" href="{% unless include.home %}/{% endunless %}#proof">Why trust it</a>
+        <a class="nav-link" href="{% unless include.home %}/{% endunless %}#faq">FAQ</a>
+        <a class="nav-link" href="/support/">Support</a>
+      </div>
+    </div>
+  </div>
 </header>
+<script>
+  (function () {
+    var toggle = document.getElementById('mobileMenuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', function () {
+      var open = !menu.hidden;
+      menu.hidden = open;
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>
