@@ -1,23 +1,49 @@
-<header class="site-header">
-  <div class="header-container">
-    <a href="/" class="brand-logo" aria-label="Organiser Home">
-      <img src="/assets/icon-192.png" alt="Organiser Logo" width="32" height="32" />
-      <span class="brand-name">Organiser</span>
+<header class="site-header" role="banner">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="container nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="brand" aria-label="Organiser home">
+      <!-- App icon: replace the src with your app icon path (SVG recommended) -->
+      <img src="/assets/app-icon.svg" alt="Organiser logo" class="brand-mark" />
+      <span class="brand-text">Organiser</span>
     </a>
 
-    <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-    </button>
-
-    <nav id="primary-navigation" class="primary-nav">
-      <ul class="nav-list">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/support/" class="nav-link">Support</a></li>
-        <li><a href="/privacy/" class="nav-link">Privacy</a></li>
-        <li><a href="https://app.organiserapp.co.uk" class="nav-link cta-button">Open App</a></li>
-      </ul>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/features">Features</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/about">About</a>
     </nav>
+
+    <div class="nav-actions" style="margin-left:auto; display:flex; align-items:center; gap:12px;">
+      <a class="button button-secondary" href="/login">Log in</a>
+      <a class="nav-cta" href="/signup">Get started</a>
+
+      <button
+        id="mobileMenuToggle"
+        class="mobile-toggle visually-hidden"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu" hidden>
+    <div class="container">
+      <div class="mobile-menu-inner" style="display:flex; flex-direction:column; gap:12px; padding:16px 0;">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/features">Features</a>
+        <a class="nav-link" href="/pricing">Pricing</a>
+        <a class="nav-link" href="/about">About</a>
+        <div style="margin-top:8px;">
+          <a class="button button-secondary" href="/login">Log in</a>
+          <a class="nav-cta" href="/signup" style="margin-left:8px;">Get started</a>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
