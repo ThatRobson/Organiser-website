@@ -1,27 +1,24 @@
 <header class="site-header" role="banner">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#{{ include.skip_target | default: 'main' }}">Skip to content</a>
 
   <div class="container nav" role="navigation" aria-label="Main navigation">
-    <a href="/" class="brand" aria-label="Organiser home">
-      <!-- App icon: replace the src with your app icon path (SVG recommended) -->
-      <img src="/assets/app-icon.svg" alt="Organiser logo" class="brand-mark" />
+    <a href="{% if include.home %}#top{% else %}/{% endif %}" class="brand" aria-label="Organiser home">
+      <img src="/assets/icon-192.png" alt="" class="brand-mark" width="34" height="34">
       <span class="brand-text">Organiser</span>
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/features">Features</a>
-      <a class="nav-link" href="/pricing">Pricing</a>
-      <a class="nav-link" href="/about">About</a>
+      <a class="nav-link" href="{% unless include.home %}/{% endunless %}#benefits">Benefits</a>
+      <a class="nav-link" href="{% unless include.home %}/{% endunless %}#proof">Why trust it</a>
+      <a class="nav-link" href="{% unless include.home %}/{% endunless %}#faq">FAQ</a>
     </nav>
 
     <div class="nav-actions" style="margin-left:auto; display:flex; align-items:center; gap:12px;">
-      <a class="button button-secondary" href="/login">Log in</a>
-      <a class="nav-cta" href="/signup">Get started</a>
+      <a class="nav-cta" href="/support/">Support</a>
 
       <button
         id="mobileMenuToggle"
-        class="mobile-toggle visually-hidden"
+        class="mobile-toggle"
         aria-expanded="false"
         aria-controls="mobileMenu"
         aria-label="Toggle navigation">
@@ -35,15 +32,23 @@
   <div id="mobileMenu" class="mobile-menu" hidden>
     <div class="container">
       <div class="mobile-menu-inner" style="display:flex; flex-direction:column; gap:12px; padding:16px 0;">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/features">Features</a>
-        <a class="nav-link" href="/pricing">Pricing</a>
-        <a class="nav-link" href="/about">About</a>
-        <div style="margin-top:8px;">
-          <a class="button button-secondary" href="/login">Log in</a>
-          <a class="nav-cta" href="/signup" style="margin-left:8px;">Get started</a>
-        </div>
+        <a class="nav-link" href="{% unless include.home %}/{% endunless %}#benefits">Benefits</a>
+        <a class="nav-link" href="{% unless include.home %}/{% endunless %}#proof">Why trust it</a>
+        <a class="nav-link" href="{% unless include.home %}/{% endunless %}#faq">FAQ</a>
+        <a class="nav-link" href="/support/">Support</a>
       </div>
     </div>
   </div>
 </header>
+<script>
+  (function () {
+    var toggle = document.getElementById('mobileMenuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', function () {
+      var open = !menu.hidden;
+      menu.hidden = open;
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>

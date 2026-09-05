@@ -136,6 +136,15 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; margi
 .nav-cta { padding: 0 18px; min-height: 40px; border-radius: var(--r-sm); background: var(--navy); color: #fff; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; }
 .nav-cta:hover { background: var(--navy-ink); }
 
+.mobile-toggle {
+  display: none; align-items: center; justify-content: center;
+  width: 40px; height: 40px; padding: 0; margin-left: var(--sp-2);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+  background: var(--card); color: var(--text); flex: none;
+}
+.mobile-menu { border-top: 1px solid var(--line); background: var(--card); }
+.mobile-menu[hidden] { display: none; }
+
 /* ============================================================
    Hero
    ============================================================ */
@@ -362,6 +371,8 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; margi
 
 @media (max-width: 760px) {
   .nav-links { display: none; }
+  .nav-actions .nav-cta { display: none; }
+  .mobile-toggle { display: inline-flex; }
   .hero-inner { grid-template-columns: 1fr; padding: var(--sp-12) 0 var(--sp-8); gap: var(--sp-8); }
   .hero-copy { text-align: center; }
   .hero h1 { font-size: clamp(34px, 9vw, 44px); }
